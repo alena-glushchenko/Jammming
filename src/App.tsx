@@ -2,27 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-interface AppProps {
-  color?: string
-}
-
-function App(props: AppProps) {
-  const [color, setColor] = React.useState(props.color);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setColor("orange");
-    }, 5000);
-  }, []);
-
-  React.useEffect(() => {
-    if (color !== "green") {
-      setTimeout(() => {
-        setColor("yellow");
-      }, 5000);
-    }
-  }, [color]);
-
+function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -38,9 +18,6 @@ function App(props: AppProps) {
         >
           Learn React
         </a>
-        <p>
-          Our color is {color}
-        </p>
       </header>
     </div>
   );
