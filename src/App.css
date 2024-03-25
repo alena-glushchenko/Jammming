@@ -1,38 +1,206 @@
-.App {
-  text-align: center;
+* {
+    font-family: system-ui;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, .app, #root {
+    height: 100%;
+    width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("assets/back-img.jpg") no-repeat fixed 0px 0px;
+    overflow: auto;
+    background-size: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.app::-webkit-scrollbar-thumb {
+    background-color: #c26cc2;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.10), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+    color: white;
+    position: relative;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header span {
+    color: #c26cc2;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding-top: 120px;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: relative;
+    gap: 120px;
+    padding-bottom: 60px;
+    z-index: 1;
+}
+
+.main-playlist {
+    padding: 0 60px;
+    display: flex;
+    gap: 40px;
+}
+
+@media (width < 600px) {
+    .main-playlist {
+        padding: 0 20px;
+    }
+}
+
+@media (width < 860px) {
+    .main-playlist {
+        flex-direction: column;
+    }
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.login-page .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+
+    background-color: rgb(33 17 37 / 50%);
+    border: 1px solid #a398984d;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 21px 23px rgba(34, 60, 80, 0.2);
+    padding: 36px;
+    width: 100%;
+    max-width: 460px;
+}
+
+.login-page .login-container h2 {
+    margin: 0;
+}
+
+.login-page .login-container span {
+    color: #c26cc2;
+}
+
+.login-page .login-container h3 {
+    margin: 0;
+    border-bottom: 1px solid BurlyWood;
+}
+
+.login-page .login-container img {
+    width: 40px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    z-index: 1;
+}
+
+.footer p {
+    background: rgba(0, 0, 0, 0.6);
+    color: #b8b3b3;
+    padding: 12px 0;
+    margin: 0;
+}
+
+.loading-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading-overlay img {
+    width: 150px;
+}
+
+.loading-overlay p {
+    color: #b76ab0;
+    transform: translate(-12px, -16px);
+    margin: 0;
+    font-size: 30px;
+}
+
+.snackbar {
+    visibility: hidden; /* Скрыто по умолчанию. Видимый по щелчку мыши */
+    min-width: 250px; /* Установите минимальную ширину по умолчанию */
+    margin-left: -125px; /* Разделите значение min-width на 2 */
+    background-color: #333; /* Черный цвет фона */
+    color: #fff; /* Белый цвет текста */
+    text-align: center; /* Центрированный текст */
+    border-radius: 2px; /* Округленные границы */
+    padding: 16px; /* Отступ */
+    position: fixed; /* Сядьте на верхнюю часть экрана */
+    z-index: 1; /* Добавить z-индекс при необходимости */
+    left: 50%; /* Центр, снэк-бар */
+    bottom: 30px; /* 30 пикселей снизу */
+}
+
+.snackbar-show {
+    visibility: visible;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 16px;
+    position: fixed;
+    z-index: 2;
+    left: 80%;
+    bottom: 30px;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
 }

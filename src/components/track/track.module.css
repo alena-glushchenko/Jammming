@@ -1,0 +1,117 @@
+.track {
+    border-bottom: 1px solid BurlyWood;
+    padding: 12px 0;
+}
+
+.track .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.track .container button {
+    font-weight: bolder;
+    background: transparent;
+    transition: all 250ms;
+    color: #ffffff;
+    outline: transparent;
+}
+
+.track button:hover:not([disabled]) {
+    cursor: pointer;
+    color: grey;
+    outline: 1px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.track .container button[disabled] {
+    cursor: default;
+    opacity: 0.35;
+}
+
+/*.track button:focus {*/
+/*    outline: 1px solid #ffffff;*/
+/*    outline-offset: 3px;*/
+/*    transition: outline-color 250ms;*/
+/*}*/
+
+.track h5 {
+    margin: 0;
+}
+
+.track h6 {
+    margin: 0;
+    color: grey;
+}
+
+.track .play {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.track .topSection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.track .bottomSection {
+    display: flex;
+    /*padding-left: 68px;*/
+    padding-right: 20px;
+    gap: 8px;
+    align-items: center;
+}
+
+.track .bottomSection input {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: default;
+    height: 5px;
+    border-radius: 4px;
+}
+
+.track .bottomSection input[type="range"]::-webkit-slider-runnable-track{
+    background: rgba(183, 106, 176, 0.5);
+    height: 5px;
+    border-radius: 4px;
+}
+
+.track .bottomSection input[type="range"]::-moz-range-track {
+    background: rgba(183, 106, 176, 0.5);
+    height: 5px;
+    border-radius: 4px;
+}
+
+.track .bottomSection input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.track .bottomSection input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.track .bottomSection .formatTime {
+    display: flex;
+}
+
+.track .bottomSection p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    line-height: 14px;
+}
+
+.track .bottomSection .sampleNotAvailable {
+    padding-left: 72px;
+}
+
+

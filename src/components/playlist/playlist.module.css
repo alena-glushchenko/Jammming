@@ -1,0 +1,39 @@
+.playList {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    gap: 16px;
+
+    text-align: left;
+    border: 1px solid #a398984d;
+    background-color: rgb(0 0 0 / 50%);
+    padding: 12px;
+    min-height: 800px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 21px 23px rgba(34, 60, 80, 0.2);
+}
+
+.playList button {
+    align-self: center;
+}
+
+.playList .playListName {
+    height: 35px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    transition: border-bottom-color 250ms;
+}
+
+.playList input:focus-visible {
+    outline: 0;
+    border-color: #c26cc2;
+    caret-color: #c26cc2;
+}
+

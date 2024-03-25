@@ -1,0 +1,24 @@
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.input {
+    padding: 10px 32px;
+    text-align: center;
+    border-bottom: 2px solid #b76ab0;
+    border-radius: 12px;
+    box-shadow: 4px 4px 21px 23px rgba(34, 60, 80, 0.2);
+    font-size: 18px;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.input:focus-visible {
+    outline: transparent;
+}
+
+.input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}

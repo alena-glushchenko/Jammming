@@ -1,0 +1,17 @@
+.button {
+    background-color: #191970;
+    color: white;
+    border-radius: 20px;
+    padding: 0 24px;
+    border: 0;
+    letter-spacing: 1px;
+    font-size: 16px;
+    height: 40px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: opacity 250ms;
+}
+
+.button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
